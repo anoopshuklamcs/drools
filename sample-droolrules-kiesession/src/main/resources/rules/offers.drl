@@ -1,0 +1,22 @@
+package rules
+import com.anoop.drooldemo.PaymentOfferByState;
+
+rule "offer for TN"
+
+when 
+	offerObject:  PaymentOfferByState(state=="TN")
+	
+	then
+	offerObject.setDiscount("10%");
+	
+	end
+	
+	
+rule "offer for TX"
+when 
+	offerObject:  PaymentOfferByState(state=="TX")
+	
+	then
+	offerObject.setDiscount("15%");
+	
+	end
